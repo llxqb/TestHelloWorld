@@ -3,18 +3,19 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion 29 //指定项目的编译版本
+    buildToolsVersion "29.0.3"//指定项目构建工具的版本
 
     defaultConfig {
-        applicationId "com.s20cxq.testhelloworld"
-        minSdkVersion 19
-        targetSdkVersion 29
+        applicationId "com.s20cxq.helloworld"
+        minSdkVersion 19//指定项目最低兼容的Android系统版本
+        targetSdkVersion 29//表示你在该目标版本上已经做过了充分的测试，系统将会为你的应用程序启用一些最新的功能和特性。
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
 
     buildTypes {
         release {

@@ -12,6 +12,7 @@ class UserCenterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_center)
+        Log.i(TAG, "UserCenterActivity  执行了 onCreate()")
 
         save_user_btn.setOnClickListener {
             saveUserData()
@@ -19,8 +20,6 @@ class UserCenterActivity : AppCompatActivity() {
         query_user_btn.setOnClickListener {
             getUserData()
         }
-
-
     }
 
     private fun saveUserData(){

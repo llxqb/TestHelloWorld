@@ -1,12 +1,14 @@
 package com.s20cxq.testhelloworld
 
-import android.content.*
-import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
+import android.content.ComponentName
+import android.content.Context
+import android.content.Intent
+import android.content.ServiceConnection
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -29,9 +31,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.i(TAG, "MainActivity  执行了 onCreate()")
         click_me_btn.setOnClickListener {
 //            num_tv.text = (++num).toString()
-
 //            显示启动
             val intent = Intent(this, UserCenterActivity::class.java)
             startActivity(intent)
@@ -55,8 +57,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         stop_service_btn.setOnClickListener(this)
         start_broadcast_btn.setOnClickListener(this)
         base_ui_btn.setOnClickListener(this)
-
-
     }
 
     override fun onClick(v: View) {
@@ -134,6 +134,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onDestroy() {
         super.onDestroy()
+        Log.i(TAG, "MainActivity  执行了 onDestroy()")
         unregisterReceiver(myBroadCastReceiver)
     }
 }
